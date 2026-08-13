@@ -10,7 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Login from "./components/Login/Login";
 
 const App = () => {
-  const url = "http://localhost:3000";
+ const url = "https://cravecart-backend-yo8v.onrender.com";
   return (
     <div>
       <ToastContainer />
