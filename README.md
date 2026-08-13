@@ -1,130 +1,154 @@
-# TOMATO - Food Ordering Website
+# 🍔 CraveCart — Food Delivery Platform
 
-This repository hosts the source code for TOMATO, a dynamic food ordering website built with the MERN Stack. It offers a user-friendly platform for seamless online food ordering.
+> **Craving Delivered.**
 
-## Demo
+CraveCart is a full-stack food delivery web application built using the **MERN Stack**. It provides a complete online food ordering experience with customer authentication, shopping cart, Stripe test payments, order management, email confirmations, and a dedicated admin panel.
 
-- User Panel: [https://food-delivery-frontend-s2l9.onrender.com/](https://food-delivery-frontend-s2l9.onrender.com/)
-- Admin Panel: [https://food-delivery-admin-wrme.onrender.com/](https://food-delivery-admin-wrme.onrender.com/)
+---
 
-## Features
+## 🌐 Project Overview
 
-- User Panel
-- Admin Panel
+CraveCart consists of three major applications:
+
+- 👤 Customer Panel
+- 🛠️ Admin Panel
+- ⚙️ Backend REST API
+
+The platform allows customers to browse food items, add products to their cart, place orders, make secure test payments through Stripe, and receive order confirmation emails.
+
+Administrators can manage food products, view orders, and update order statuses.
+
+---
+
+## ✨ Features
+
+### 👤 Customer Panel
+
+- User Registration & Login
 - JWT Authentication
 - Password Hashing with Bcrypt
-- Stripe Payment Integration
-- Login/Signup
+- Browse Food Items
+- Food Category Filtering
+- Search Food
+- Add Food to Cart
+- Update Cart Quantity
+- Remove Food from Cart
+- Delivery Information
+- Order Placement
+- Stripe Test Payment
+- Order Verification
+- My Orders
+- Order Status Tracking
 - Logout
-- Add to Cart
-- Place Order
-- Order Management
-- Products Management
-- Filter Food Products
-- Login/Signup
-- Authenticated APIs
-- REST APIs
-- Role-Based Identification
-- Beautiful Alerts
+- Toast Notifications
 
-## Screenshots
+### 🛠️ Admin Panel
 
-![Hero](https://i.ibb.co/59cwY75/food-hero.png)
-- Hero Section
+- Admin Login
+- Role-Based Authentication
+- Add Food Items
+- Remove Food Items
+- View All Food Items
+- View Customer Orders
+- Update Order Status
+- Admin Logout
+- Protected Admin APIs
 
-![Products](https://i.ibb.co/JnNQPyQ/food-products.png)
-- Products Section
+### 📧 Email System
 
-![Cart](https://i.ibb.co/t2LrQ8p/food-cart.png)
-- Cart Page
+CraveCart uses **Nodemailer** to send professional order confirmation emails.
 
-![Login](https://i.ibb.co/s6PgwkZ/food-login.png)
-- Login Popup
+Customers receive:
 
-## Run Locally
+- Order confirmation
+- Customer name
+- Order ID
+- Ordered food items
+- Quantity
+- Price
+- Total amount
+- Estimated delivery time
 
-Clone the project
+### 💳 Payment
 
-```bash
-    git clone https://github.com/Mshandev/Food-Delivery
-```
-Go to the project directory
+Stripe Test Mode is integrated for payment processing.
 
-```bash
-    cd Food-Delivery
-```
-Install dependencies (frontend)
+The project supports:
 
-```bash
-    cd frontend
-    npm install
-```
-Install dependencies (admin)
+- Stripe Checkout
+- Test Payments
+- Payment Verification
+- Successful Payment Handling
+- Cancelled Payment Handling
 
-```bash
-    cd admin
-    npm install
-```
-Install dependencies (backend)
+> ⚠️ Stripe is currently configured for **test mode**.
 
-```bash
-    cd backend
-    npm install
-```
-Setup Environment Vaiables
+---
 
-```Make .env file in "backend" folder and store environment Variables
-  JWT_SECRET=YOUR_SECRET_TEXT
-  SALT=YOUR_SALT_VALUE
-  MONGO_URL=YOUR_DATABASE_URL
-  STRIPE_SECRET_KEY=YOUR_KEY
- ```
+## 🧰 Tech Stack
 
-Setup the Frontend and Backend URL
-   - App.jsx in Admin folder
-      const url = YOUR_BACKEND_URL
-     
-  - StoreContext.js in Frontend folder
-      const url = YOUR_BACKEND_URL
+### Frontend
 
-  - orderController in Backend folder
-      const frontend_url = YOUR_FRONTEND_URL 
+- React.js
+- React Router
+- Axios
+- CSS
+- React Toastify
 
-Start the Backend server
+### Backend
 
-```bash
-    nodemon server.js
-```
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- JWT
+- Bcrypt
+- Multer
+- Nodemailer
+- Stripe
 
-Start the Frontend server
+### Database
 
-```bash
-    npm start
-```
+- MongoDB Atlas
 
-Start the Backend server
+### Services
 
-```bash
-    npm start
-```
-## Tech Stack
-* [React](https://reactjs.org/)
-* [Node.js](https://nodejs.org/en)
-* [Express.js](https://expressjs.com/)
-* [Mongodb](https://www.mongodb.com/)
-* [Stripe](https://stripe.com/)
-* [JWT-Authentication](https://jwt.io/introduction)
-* [Multer](https://www.npmjs.com/package/multer)
+- Stripe
+- Gmail / Nodemailer
+- Cloudinary
+- Render
 
-## Deployment
+---
 
-The application is deployed on Render.
+## 🏗️ Project Structure
 
-## Contributing
-
-Contributions are always welcome!
-Just raise an issue, and we will discuss it.
-
-## Feedback
-
-If you have any feedback, please reach out to me [here](https://www.linkedin.com/in/muhammad-shan-full-stack-developer/)
+```text
+CraveCart/
+│
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   ├── package.json
+│   └── index.html
+│
+├── admin/
+│   ├── public/
+│   ├── src/
+│   ├── package.json
+│   └── index.html
+│
+├── backend/
+│   ├── config/
+│   ├── controllers/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   ├── services/
+│   ├── templates/
+│   ├── uploads/
+│   ├── server.js
+│   └── package.json
+│
+├── .gitignore
+├── logo.png
+└── README.md
