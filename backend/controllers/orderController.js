@@ -20,14 +20,16 @@ const placeOrder = async (req, res) => {
     await newOrder.save();
 
     // Send Order Confirmation Email
-    await sendOrderConfirmation(
-      `${req.body.address.firstName} ${req.body.address.lastName}`,
-      req.body.address.email,
-      newOrder._id,
-      req.body.amount,
-      req.body.items
-    );
-
+   // Send Order Confirmation Email
+sendOrderConfirmation(
+  `${req.body.address.firstName} ${req.body.address.lastName}`,
+  req.body.address.email,
+  newOrder._id,
+  req.body.amount,
+  req.body.items
+).catch((error) => {
+  console.error("Email failed:", error.message);
+});
     // Clear Cart
     await userModel.findByIdAndUpdate(req.body.userId, {
       cartData: {},
